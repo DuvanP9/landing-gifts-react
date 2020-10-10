@@ -24,7 +24,25 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "prettier": {
+    "printWidth": 90,
+    "bracketSpacing": false,
+    "trailingComma": "es5"
+  },
+  "pelusa por etapas": {
+    "*. + (js | jsx)": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*. + (json | css | md)": [
+      "más bonito --escribir",
+      "git add"
+    ]
   },
   "browserslist": {
     "production": [
@@ -37,5 +55,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "lint-staged": "^10.4.0"
   }
 }
