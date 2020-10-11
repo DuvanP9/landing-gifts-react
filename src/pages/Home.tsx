@@ -1,10 +1,14 @@
 import React from 'react';
+import { Route, Redirect } from "react-router-dom";
 
 function Home() {
+  
+  const isAuthed = !!localStorage.getItem('user');
+
   return (
-    <div>
-      <h1>project creation</h1>    
-    </div>
+    <Route exact path="/">
+      {isAuthed ? <Redirect to="/" /> : <Redirect to="/login" /> }
+    </Route>
   );
 }
 
