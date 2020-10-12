@@ -51,7 +51,9 @@ const reducer = (state: IUser, action: Action): IUser => {
 
 const Login = () => {
   
-  const isAuthed = !!localStorage.getItem('user');
+  const isAuthed = !!localStorage.getItem('auth');
+  const localUser = localStorage.getItem('user');
+  const localPassword = localStorage.getItem('password');
   const classes = useStyles();
   const history = useHistory();
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -60,9 +62,9 @@ const Login = () => {
   }, [state.username, state.password]);
 
   const handleLogin = () => {
-    
-    if (state.username === 'correo@correo.com' && state.password === 'password') {
-      localStorage.setItem("user", state.username)
+
+    if (state.username === localUser && state.password === localPassword) {
+      localStorage.setItem("auth", 'true')
       dispatch({
         type: 'loginSuccess',
         payload: 'Login Successfully'
