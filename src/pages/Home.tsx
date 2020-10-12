@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <Route exact path="/">
-      {isAuthed ? <Redirect to="/" /> : <Redirect to="/login" /> }
+      {isAuthed ? <Redirect to="/landing" /> : <Redirect to="/login" /> }
     </Route>
   );
 }
