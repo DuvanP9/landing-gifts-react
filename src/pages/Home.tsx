@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 
 function Home() {
   
-  const isAuthed = !!localStorage.getItem('user');
+  const isAuthed = !!localStorage.getItem('auth');
 
   return (
     <Route exact path="/">
