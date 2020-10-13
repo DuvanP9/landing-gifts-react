@@ -9,6 +9,9 @@ import Container from '@material-ui/core/Container';
 import useStyles from './styles/Singup'
 import { useHistory } from "react-router-dom";
 import { IUser, ActionR } from './models/user.model'
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 const initialState:IUser = {
   username: '',
@@ -53,6 +56,7 @@ const SignUp = () => {
   const classes = useStyles();
   const history = useHistory();
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [open, setOpen] = React.useState(false);
 
   useEffect(() => {
   }, [state.username, state.password]);
@@ -60,24 +64,34 @@ const SignUp = () => {
   const handleLogin = () => {
     localStorage.setItem("user", state.username)
     localStorage.setItem("password", state.password)
+    handleClick()
     history.push('/login');
   };
 
-  const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> =
-    (event) => {
-      dispatch({
-        type: 'setUsername',
-        payload: event.target.value
-      });
-    };
+  const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    dispatch({
+      payload: event.target.value,
+      type: 'setUsername',
+    });
+  };
 
-  const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> =
-    (event) => {
+  const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
       dispatch({
         type: 'setPassword',
         payload: event.target.value
-      });
-    }
+    });
+  }
+    const handleClick = () => {
+      setOpen(true);
+    };
+
+    const handleClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+
+      setOpen(false);
+    };
 
   return (
       <Container component="main" maxWidth="xs">
@@ -133,6 +147,26 @@ const SignUp = () => {
             </Grid>
           </form>
         </div>
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          open={open}
+          autoHideDuration={6000}
+          onClose={handleClose}
+          message="Note archived"
+          action={
+            <React.Fragment>
+              <Button color="secondary" size="small" onClick={handleClose}>
+                Registro Exitoso
+              </Button>
+              <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </React.Fragment>
+          }
+        />
       </Container>
   );
 }
