@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import Layout from '../pages/Layout';
 import ResizeObserver from "react-resize-observer";
-const baseURL = process.env.API_KEY
 import { Grid } from '@giphy/react-components'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 
-const gf = new GiphyFetch(baseURL)
+const gf = new GiphyFetch('mbRWHlb3QJB1cjG4nQovpVT4iazco7cZ')
 
 interface ITrendingProps {
   onGifClick: () => void;
