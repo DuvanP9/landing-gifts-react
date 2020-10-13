@@ -165,13 +165,13 @@ const Login = () => {
             horizontal: 'left',
           }}
           open={open}
-          autoHideDuration={6000}
+          autoHideDuration={100000}
           onClose={handleClose}
-          message="Note archived"
+          message="Usuario incorrecto"
           action={
             <React.Fragment>
               <Button color="secondary" size="small" onClick={handleClose}>
-                Usuario Incorrecto
+                Close
               </Button>
               <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
                 <CloseIcon fontSize="small" />

@@ -62,9 +62,9 @@ const SignUp = () => {
   }, [state.username, state.password]);
 
   const handleLogin = () => {
-    localStorage.setItem("user", state.username)
-    localStorage.setItem("password", state.password)
-    handleClick()
+    localStorage.setItem("user", state.username);
+    localStorage.setItem("password", state.password);
+    handleClick();
     history.push('/login');
   };
 
