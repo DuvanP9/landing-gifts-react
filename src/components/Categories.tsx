@@ -1,5 +1,7 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import Layout from '../pages/Layout';
+import useStyles from './styles/Categories';
+import ResizeObserver from "react-resize-observer";
 
 import {
   Grid,
@@ -11,17 +13,28 @@ import {
 
 const SearchExperience = () => {
   const { fetchGifs, searchKey } = useContext(SearchContext)
+  const [width, setWidth] = useState(window.innerWidth);
+  const classes = useStyles();
+  
   return (
   <>
-    <SearchBar />
-    <br/>
-    <SuggestionBar />
-    <Grid key={searchKey}  columns={3} width={400} fetchGifs={fetchGifs} />
+    <div className={classes.search}>
+      <SearchBar />
+    </div>
+      <SuggestionBar />
+    <div className={classes.gifs}>
+      <Grid key={searchKey}  columns={3} width={width} fetchGifs={fetchGifs} />
+      <ResizeObserver
+        onResize={({ width }) => {
+          setWidth(width);
+        }}
+      />
+    </div>
   </>
   )
 }
 
-function Trending() {
+function Categories() {
   
   return (
     <React.Fragment>
@@ -34,4 +47,4 @@ function Trending() {
   );
 }
 
-export default Trending;
+export default Categories;
