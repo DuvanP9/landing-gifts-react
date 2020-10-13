@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 import Layout from '../pages/Layout';
 import useStyles from './styles/Categories';
 import ResizeObserver from "react-resize-observer";
-
+import {API_KEY} from '../settings'
 import {
   Grid,
   SearchBar,
@@ -39,7 +39,7 @@ function Categories() {
   return (
     <React.Fragment>
       <Layout>
-        <SearchContextManager apiKey={'mbRWHlb3QJB1cjG4nQovpVT4iazco7cZ'}>
+        <SearchContextManager apiKey={API_KEY}>
             <SearchExperience />
         </SearchContextManager>
       </Layout>
