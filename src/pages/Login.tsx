@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import useStyles from './styles/Login'
-import { useHistory, Route, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { IUser, Action } from './models/user.model'
 
 const initialState:IUser = {
@@ -50,8 +50,6 @@ const reducer = (state: IUser, action: Action): IUser => {
 }
 
 const Login = () => {
-  
-  const isAuthed = !!localStorage.getItem('auth');
   const localUser = localStorage.getItem('user');
   const localPassword = localStorage.getItem('password');
   const classes = useStyles();
@@ -95,9 +93,6 @@ const Login = () => {
     }
 
   return (
-      <Route exact path="/login">
-        {isAuthed ? 
-        <Redirect to="/" /> : 
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
@@ -149,8 +144,6 @@ const Login = () => {
             </form>
           </div>
         </Container>
-        }
-      </Route>
   );
 }
 

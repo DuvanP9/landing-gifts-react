@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import useStyles from './styles/Singup'
-import { useHistory, Route, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { IUser, ActionR } from './models/user.model'
 
 const initialState:IUser = {
@@ -50,7 +50,6 @@ const reducer = (state: IUser, action: ActionR): IUser => {
 }
 
 const SignUp = () => {
-  const isAuthed = !!localStorage.getItem('auth');
   const classes = useStyles();
   const history = useHistory();
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -81,9 +80,6 @@ const SignUp = () => {
     }
 
   return (
-    <Route exact path="/singup">
-      {isAuthed ? 
-      <Redirect to="/" /> : 
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -138,8 +134,6 @@ const SignUp = () => {
           </form>
         </div>
       </Container>
-      }
-    </Route>
   );
 }
 
