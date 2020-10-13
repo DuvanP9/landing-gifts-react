@@ -1,8 +1,6 @@
 import React from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { useHistory, Link as RouterLink} from "react-router-dom";
@@ -31,9 +29,15 @@ export default function Header(props: IHeaderProps) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
+        <Typography
+          component="h2"
+          variant="h5"
+          color="inherit"
+          align="center"
+          noWrap
+        >
+          {title}
+        </Typography>
         <Button variant="outlined" size="small" onClick={handleLogout}>
           Cerrar Sesion
         </Button>
