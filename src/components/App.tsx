@@ -6,7 +6,7 @@ import Trending from '../components/Trending';
 import Categories from '../components/Categories';
 import Random from '../components/Random';
 
-interface IRouteProps extends RouteProps {
+export interface IRouteProps extends RouteProps {
   path: string;
   component: any;
 }

@@ -4,14 +4,14 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { useHistory, Link as RouterLink} from "react-router-dom";
-import useStyles from './styles/Header'
+import useStyles from './styles/Header';
 
 export interface ISectionRoutes {
   title: string;
   url: string;
-}
-
-interface IHeaderProps {
+};
+  
+export interface IHeaderProps {
   sections: ISectionRoutes[];
   title: string;
 };

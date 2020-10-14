@@ -3,9 +3,8 @@ import Layout from '../pages/Layout';
 import ResizeObserver from "react-resize-observer";
 import { Grid } from '@giphy/react-components'
 import { GiphyFetch } from '@giphy/js-fetch-api'
-import {API_KEY} from '../settings'
 
-const gf = new GiphyFetch(API_KEY);
+const gf = new GiphyFetch('mbRWHlb3QJB1cjG4nQovpVT4iazco7cZ');
 
 interface ITrendingProps {
   onGifClick: () => void;

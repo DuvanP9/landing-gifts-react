@@ -9,9 +9,6 @@ import Container from '@material-ui/core/Container';
 import useStyles from './styles/Login'
 import { useHistory } from "react-router-dom";
 import { IUser, Action } from './models/user.model'
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
 
 const initialState:IUser = {
   username: '',
@@ -58,7 +55,6 @@ const Login = () => {
   const classes = useStyles();
   const history = useHistory();
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [open, setOpen] = React.useState(false);
 
   useEffect(() => {
   }, [state.username, state.password]);
@@ -77,7 +73,6 @@ const Login = () => {
         type: 'loginFailed',
         payload: 'Incorrect username or password'
       });
-      handleClick()
     }
   };
 
@@ -96,90 +91,59 @@ const Login = () => {
         payload: event.target.value
       });
     }
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setOpen(false);
-  };
-
 
   return (
-        <Container component="main" maxWidth="xs">
-          <CssBaseline />
-          <div className={classes.paper}>
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
-            <form className={classes.form} noValidate>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Correo Electronico"
-                name="email"
-                autoComplete="email"
-                onChange={handleUsernameChange}
-                autoFocus
-              />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Contraseña"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-                onChange={handlePasswordChange}
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-                onClick={handleLogin}
-              >
-                Iniciar Sesion
-              </Button>
-              <Grid container>
-                <Grid item>
-                  <Link href="/singup" variant="body2">
-                    {"¿No tienes una cuenta?, ¡Registrate!"}
-                  </Link>
-                </Grid>
-              </Grid>
-            </form>
-          </div>
-        <Snackbar
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-          }}
-          open={open}
-          autoHideDuration={100000}
-          onClose={handleClose}
-          message="Usuario incorrecto"
-          action={
-            <React.Fragment>
-              <Button color="secondary" size="small" onClick={handleClose}>
-                Close
-              </Button>
-              <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
-                <CloseIcon fontSize="small" />
-              </IconButton>
-            </React.Fragment>
-          }
-        />
-        </Container>
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Typography component="h1" variant="h5">
+          Sign in
+        </Typography>
+        <form className={classes.form} noValidate>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Correo Electronico"
+            name="email"
+            autoComplete="email"
+            onChange={handleUsernameChange}
+            autoFocus
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Contraseña"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            onChange={handlePasswordChange}
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+            onClick={handleLogin}
+          >
+            Iniciar Sesion
+          </Button>
+          <Grid container>
+            <Grid item>
+              <Link href="/singup" variant="body2">
+                {"¿No tienes una cuenta?, ¡Registrate!"}
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+    </Container>
   );
 }
 
