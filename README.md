@@ -1,6 +1,6 @@
 ## Proyecto de ReactJs con TypeScript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -44,3 +44,33 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+# Landing Page 
+
+_Proyecto creado para el uso de los servicios de la API GIPHY_ [API GIPHY](https://developers.giphy.com/)
+
+# Contiene
+_login y registro_
+_entre las acciones que permite hacer con la API de GIPHY es: busqueda, busqueda por categorias, listado de gifs por tendencias y autores por gif_
+# Ramas creadas durante la creacion del proyecto
+    -master
+    rama principal
+    -develop
+    rama para la union de las features
+    -feature-login
+    creacion del login
+    -feature-regsiter
+    creacion del regsiter
+    -feature-landing
+    creacion del login y todos lso componentes que consumen la api de GIPHY
+
+## Despliegue 📦
+
+_Desplegada con AWS amplify coenctando con el repositorio_
+
+## Construido con 🛠️
+
+_ReactJs con TypeScript_
+_Material UI_
+_AWS amplify_
