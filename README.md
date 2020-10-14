@@ -66,17 +66,22 @@ _entre las acciones que permite hacer con la API de GIPHY es: busqueda, busqueda
     -feature-landing
     creacion del login y todos lso componentes que consumen la api de GIPHY
 
+[Imgur](https://imgur.com/5oCRR6X)
+
 ## Despliegue 📦
 
 _Desplegada con AWS amplify_
+[Imgur](https://imgur.com/9LecKya)
 
 ## Construido con 🛠️
 
 _ReactJs con TypeScript_
 #
 _Material UI_
+[Imgur](https://imgur.com/55glwEm)
 #
 _AWS amplify_
 
 [LINK](https://master.d2dir00lkrcrye.amplifyapp.com)_
+[Imgur](https://imgur.com/6f9cjPD)
 
