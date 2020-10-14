@@ -48,10 +48,11 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 # Landing Page 
 
-_Proyecto creado para el uso de los servicios de la API GIPHY_ [API GIPHY](https://developers.giphy.com/)
+_Proyecto creado para el uso de los servicios de la [API GIPHY](https://developers.giphy.com/)_
 
 # Contiene
 _login y registro_
+#
 _entre las acciones que permite hacer con la API de GIPHY es: busqueda, busqueda por categorias, listado de gifs por tendencias y autores por gif_
 # Ramas creadas durante la creacion del proyecto
     -master
@@ -67,10 +68,15 @@ _entre las acciones que permite hacer con la API de GIPHY es: busqueda, busqueda
 
 ## Despliegue 📦
 
-_Desplegada con AWS amplify coenctando con el repositorio_
+_Desplegada con AWS amplify_
 
 ## Construido con 🛠️
 
 _ReactJs con TypeScript_
+#
 _Material UI_
+#
 _AWS amplify_
+
+[LINK](https://master.d2dir00lkrcrye.amplifyapp.com)_
+
